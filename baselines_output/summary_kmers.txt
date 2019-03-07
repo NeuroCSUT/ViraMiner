@@ -1,0 +1,37 @@
+This is the summary of running n-mer_freq.py on n-mer sets from 3 to 7
+The outputs were printed to terminal and have been copied here.
+
+3mers
+done fitting RF
+Random Forest TRAIN ROC area under the curve 
+0.9999999931063787
+Random Forest TEST ROC area under the curve 
+0.8675644051685661
+
+4mers
+done fitting RF
+Random Forest TRAIN ROC area under the curve 
+0.9999999982826587
+Random Forest TEST ROC area under the curve 
+0.8724928520263914
+
+5mers
+done fitting RF
+Random Forest TRAIN ROC area under the curve 
+0.9999999982745635
+Random Forest TEST ROC area under the curve 
+0.8737762255601402
+
+6mers
+done fitting RF
+Random Forest TRAIN ROC area under the curve
+0.9999999931212225
+Random Forest TEST ROC area under the curve
+0.8787810687144436
+
+7mers
+done fitting RF
+Random Forest TEST ROC area under the curve 
+0.9999999978342045
+Random Forest TEST ROC area under the curve 
+0.8699487924442952

@@ -1,0 +1,295 @@
+train_set_size,val_size, test_set_size 211239 26405 26405
+##
+ input data: 
+  data/data_jan2019/0N_300/fullset 
+##
+__________________________________________________________________________________________________
+Layer (type)                    Output Shape         Param #     Connected to                     
+==================================================================================================
+input_1 (InputLayer)            (None, 300, 5)       0                                            
+__________________________________________________________________________________________________
+conv1d_1 (Conv1D)               (None, 293, 1000)    41000       input_1[0][0]                    
+__________________________________________________________________________________________________
+conv1d_2 (Conv1D)               (None, 290, 1200)    67200       input_1[0][0]                    
+__________________________________________________________________________________________________
+global_average_pooling1d_1 (Glo (None, 1000)         0           conv1d_1[0][0]                   
+__________________________________________________________________________________________________
+global_max_pooling1d_1 (GlobalM (None, 1200)         0           conv1d_2[0][0]                   
+__________________________________________________________________________________________________
+dropout_1 (Dropout)             (None, 1000)         0           global_average_pooling1d_1[0][0] 
+__________________________________________________________________________________________________
+dropout_2 (Dropout)             (None, 1200)         0           global_max_pooling1d_1[0][0]     
+__________________________________________________________________________________________________
+fc_layer1 (Dense)               (None, 1000)         1001000     dropout_1[0][0]                  
+__________________________________________________________________________________________________
+fc_layer2 (Dense)               (None, 1200)         1441200     dropout_2[0][0]                  
+__________________________________________________________________________________________________
+concatenate_1 (Concatenate)     (None, 2200)         0           fc_layer1[0][0]                  
+                                                                 fc_layer2[0][0]                  
+__________________________________________________________________________________________________
+drop_fc1 (Dropout)              (None, 2200)         0           concatenate_1[0][0]              
+__________________________________________________________________________________________________
+dense_1 (Dense)                 (None, 1)            2201        drop_fc1[0][0]                   
+==================================================================================================
+Total params: 2,552,601
+Trainable params: 2,552,601
+Non-trainable params: 0
+__________________________________________________________________________________________________
+Epoch 1/30
+generator uses b_size:  128
+opened file again
+lr_decay called, new lr  0.0001
+did all lines 211200 211239 1
+unique project names ['_2011_G5_96ALL-MiSeq', '_2014_J1_FRISKDIABETES', '_2014_G6_Hultin_MS', '_2014_G5_Hultin_MS', '_2011_N19_VIRASKINFAPMISEQ', '_2014_B_Prostate', '_2014_F1_PARAFFINBLANKBLOCKS', '_2014_E1_30CxC', '_2015_F_Lagheden_ACCES_HPVneg', '_2014_R1_Hultin_Caski', '_2014_O-Q1_Larynx', '_2013_H', '_2014_P_Lagheden_Matti-HPV-vacc-CIN', '_2014_G1_MS5CASES5CONTROLS', '_2015_F2_', '_2013_E2_SCC', '_2014_G7_MSNEW', '_2014_D3_Diabetes_Hyoty', '_2014_N1_Anethovirus']
+opened file again
+ - 75s - loss: 0.1042 - acc: 0.9782 - val_loss: 0.0980 - val_acc: 0.9798
+
+Epoch 00001: AUROC improved from -inf to 0.76162, saving model to final_MetaMiner/end_to_end_model_vol2.hdf5
+ AUROC on Validation:  0.7616
+Epoch 2/30
+lr_decay called, new lr  0.0001
+did all lines 422400 422478 2
+unique project names ['_2011_G5_96ALL-MiSeq', '_2014_J1_FRISKDIABETES', '_2014_G6_Hultin_MS', '_2014_G5_Hultin_MS', '_2011_N19_VIRASKINFAPMISEQ', '_2014_B_Prostate', '_2014_F1_PARAFFINBLANKBLOCKS', '_2014_E1_30CxC', '_2015_F_Lagheden_ACCES_HPVneg', '_2014_R1_Hultin_Caski', '_2014_O-Q1_Larynx', '_2013_H', '_2014_P_Lagheden_Matti-HPV-vacc-CIN', '_2014_G1_MS5CASES5CONTROLS', '_2015_F2_', '_2013_E2_SCC', '_2014_G7_MSNEW', '_2014_D3_Diabetes_Hyoty', '_2014_N1_Anethovirus']
+opened file again
+ - 76s - loss: 0.0976 - acc: 0.9789 - val_loss: 0.0911 - val_acc: 0.9798
+
+Epoch 00002: AUROC improved from 0.76162 to 0.79968, saving model to final_MetaMiner/end_to_end_model_vol2.hdf5
+ AUROC on Validation:  0.7997
+Epoch 3/30
+lr_decay called, new lr  0.0001
+did all lines 633600 633717 3
+unique project names ['_2011_G5_96ALL-MiSeq', '_2014_J1_FRISKDIABETES', '_2014_G6_Hultin_MS', '_2014_G5_Hultin_MS', '_2011_N19_VIRASKINFAPMISEQ', '_2014_B_Prostate', '_2014_F1_PARAFFINBLANKBLOCKS', '_2014_E1_30CxC', '_2015_F_Lagheden_ACCES_HPVneg', '_2014_R1_Hultin_Caski', '_2014_O-Q1_Larynx', '_2013_H', '_2014_P_Lagheden_Matti-HPV-vacc-CIN', '_2014_G1_MS5CASES5CONTROLS', '_2015_F2_', '_2013_E2_SCC', '_2014_G7_MSNEW', '_2014_D3_Diabetes_Hyoty', '_2014_N1_Anethovirus']
+opened file again
+ - 76s - loss: 0.0917 - acc: 0.9789 - val_loss: 0.0848 - val_acc: 0.9798
+
+Epoch 00003: AUROC improved from 0.79968 to 0.83182, saving model to final_MetaMiner/end_to_end_model_vol2.hdf5
+ AUROC on Validation:  0.8318
+Epoch 4/30
+lr_decay called, new lr  0.0001
+did all lines 844800 844956 4
+unique project names ['_2011_G5_96ALL-MiSeq', '_2014_J1_FRISKDIABETES', '_2014_G6_Hultin_MS', '_2014_G5_Hultin_MS', '_2011_N19_VIRASKINFAPMISEQ', '_2014_B_Prostate', '_2014_F1_PARAFFINBLANKBLOCKS', '_2014_E1_30CxC', '_2015_F_Lagheden_ACCES_HPVneg', '_2014_R1_Hultin_Caski', '_2014_O-Q1_Larynx', '_2013_H', '_2014_P_Lagheden_Matti-HPV-vacc-CIN', '_2014_G1_MS5CASES5CONTROLS', '_2015_F2_', '_2013_E2_SCC', '_2014_G7_MSNEW', '_2014_D3_Diabetes_Hyoty', '_2014_N1_Anethovirus']
+opened file again
+ - 76s - loss: 0.0858 - acc: 0.9788 - val_loss: 0.0801 - val_acc: 0.9797
+
+Epoch 00004: AUROC improved from 0.83182 to 0.85010, saving model to final_MetaMiner/end_to_end_model_vol2.hdf5
+ AUROC on Validation:  0.8501
+Epoch 5/30
+lr_decay called, new lr  5e-05
+did all lines 1056000 1056195 5
+unique project names ['_2011_G5_96ALL-MiSeq', '_2014_J1_FRISKDIABETES', '_2014_G6_Hultin_MS', '_2014_G5_Hultin_MS', '_2011_N19_VIRASKINFAPMISEQ', '_2014_B_Prostate', '_2014_F1_PARAFFINBLANKBLOCKS', '_2014_E1_30CxC', '_2015_F_Lagheden_ACCES_HPVneg', '_2014_R1_Hultin_Caski', '_2014_O-Q1_Larynx', '_2013_H', '_2014_P_Lagheden_Matti-HPV-vacc-CIN', '_2014_G1_MS5CASES5CONTROLS', '_2015_F2_', '_2013_E2_SCC', '_2014_G7_MSNEW', '_2014_D3_Diabetes_Hyoty', '_2014_N1_Anethovirus']
+opened file again
+ - 75s - loss: 0.0807 - acc: 0.9788 - val_loss: 0.0790 - val_acc: 0.9799
+
+Epoch 00005: AUROC improved from 0.85010 to 0.85335, saving model to final_MetaMiner/end_to_end_model_vol2.hdf5
+ AUROC on Validation:  0.8533
+Epoch 6/30
+lr_decay called, new lr  5e-05
+did all lines 1267200 1267434 6
+unique project names ['_2011_G5_96ALL-MiSeq', '_2014_J1_FRISKDIABETES', '_2014_G6_Hultin_MS', '_2014_G5_Hultin_MS', '_2011_N19_VIRASKINFAPMISEQ', '_2014_B_Prostate', '_2014_F1_PARAFFINBLANKBLOCKS', '_2014_E1_30CxC', '_2015_F_Lagheden_ACCES_HPVneg', '_2014_R1_Hultin_Caski', '_2014_O-Q1_Larynx', '_2013_H', '_2014_P_Lagheden_Matti-HPV-vacc-CIN', '_2014_G1_MS5CASES5CONTROLS', '_2015_F2_', '_2013_E2_SCC', '_2014_G7_MSNEW', '_2014_D3_Diabetes_Hyoty', '_2014_N1_Anethovirus']
+opened file again
+ - 75s - loss: 0.0774 - acc: 0.9791 - val_loss: 0.0773 - val_acc: 0.9801
+
+Epoch 00006: AUROC improved from 0.85335 to 0.85657, saving model to final_MetaMiner/end_to_end_model_vol2.hdf5
+ AUROC on Validation:  0.8566
+Epoch 7/30
+lr_decay called, new lr  5e-05
+did all lines 1478400 1478673 7
+unique project names ['_2011_G5_96ALL-MiSeq', '_2014_J1_FRISKDIABETES', '_2014_G6_Hultin_MS', '_2014_G5_Hultin_MS', '_2011_N19_VIRASKINFAPMISEQ', '_2014_B_Prostate', '_2014_F1_PARAFFINBLANKBLOCKS', '_2014_E1_30CxC', '_2015_F_Lagheden_ACCES_HPVneg', '_2014_R1_Hultin_Caski', '_2014_O-Q1_Larynx', '_2013_H', '_2014_P_Lagheden_Matti-HPV-vacc-CIN', '_2014_G1_MS5CASES5CONTROLS', '_2015_F2_', '_2013_E2_SCC', '_2014_G7_MSNEW', '_2014_D3_Diabetes_Hyoty', '_2014_N1_Anethovirus']
+opened file again
+ - 75s - loss: 0.0749 - acc: 0.9794 - val_loss: 0.0763 - val_acc: 0.9803
+
+Epoch 00007: AUROC improved from 0.85657 to 0.85969, saving model to final_MetaMiner/end_to_end_model_vol2.hdf5
+ AUROC on Validation:  0.8597
+Epoch 8/30
+lr_decay called, new lr  5e-05
+did all lines 1689600 1689912 8
+unique project names ['_2011_G5_96ALL-MiSeq', '_2014_J1_FRISKDIABETES', '_2014_G6_Hultin_MS', '_2014_G5_Hultin_MS', '_2011_N19_VIRASKINFAPMISEQ', '_2014_B_Prostate', '_2014_F1_PARAFFINBLANKBLOCKS', '_2014_E1_30CxC', '_2015_F_Lagheden_ACCES_HPVneg', '_2014_R1_Hultin_Caski', '_2014_O-Q1_Larynx', '_2013_H', '_2014_P_Lagheden_Matti-HPV-vacc-CIN', '_2014_G1_MS5CASES5CONTROLS', '_2015_F2_', '_2013_E2_SCC', '_2014_G7_MSNEW', '_2014_D3_Diabetes_Hyoty', '_2014_N1_Anethovirus']
+opened file again
+ - 75s - loss: 0.0721 - acc: 0.9799 - val_loss: 0.0747 - val_acc: 0.9806
+
+Epoch 00008: AUROC improved from 0.85969 to 0.86179, saving model to final_MetaMiner/end_to_end_model_vol2.hdf5
+ AUROC on Validation:  0.8618
+Epoch 9/30
+lr_decay called, new lr  5e-05
+did all lines 1900800 1901151 9
+unique project names ['_2011_G5_96ALL-MiSeq', '_2014_J1_FRISKDIABETES', '_2014_G6_Hultin_MS', '_2014_G5_Hultin_MS', '_2011_N19_VIRASKINFAPMISEQ', '_2014_B_Prostate', '_2014_F1_PARAFFINBLANKBLOCKS', '_2014_E1_30CxC', '_2015_F_Lagheden_ACCES_HPVneg', '_2014_R1_Hultin_Caski', '_2014_O-Q1_Larynx', '_2013_H', '_2014_P_Lagheden_Matti-HPV-vacc-CIN', '_2014_G1_MS5CASES5CONTROLS', '_2015_F2_', '_2013_E2_SCC', '_2014_G7_MSNEW', '_2014_D3_Diabetes_Hyoty', '_2014_N1_Anethovirus']
+opened file again
+ - 75s - loss: 0.0705 - acc: 0.9802 - val_loss: 0.0740 - val_acc: 0.9809
+
+Epoch 00009: AUROC improved from 0.86179 to 0.86310, saving model to final_MetaMiner/end_to_end_model_vol2.hdf5
+ AUROC on Validation:  0.8631
+Epoch 10/30
+lr_decay called, new lr  2.5e-05
+did all lines 2112000 2112390 10
+unique project names ['_2011_G5_96ALL-MiSeq', '_2014_J1_FRISKDIABETES', '_2014_G6_Hultin_MS', '_2014_G5_Hultin_MS', '_2011_N19_VIRASKINFAPMISEQ', '_2014_B_Prostate', '_2014_F1_PARAFFINBLANKBLOCKS', '_2014_E1_30CxC', '_2015_F_Lagheden_ACCES_HPVneg', '_2014_R1_Hultin_Caski', '_2014_O-Q1_Larynx', '_2013_H', '_2014_P_Lagheden_Matti-HPV-vacc-CIN', '_2014_G1_MS5CASES5CONTROLS', '_2015_F2_', '_2013_E2_SCC', '_2014_G7_MSNEW', '_2014_D3_Diabetes_Hyoty', '_2014_N1_Anethovirus']
+opened file again
+ - 75s - loss: 0.0675 - acc: 0.9808 - val_loss: 0.0735 - val_acc: 0.9810
+
+Epoch 00010: AUROC improved from 0.86310 to 0.86364, saving model to final_MetaMiner/end_to_end_model_vol2.hdf5
+ AUROC on Validation:  0.8636
+Epoch 11/30
+lr_decay called, new lr  2.5e-05
+did all lines 2323200 2323629 11
+unique project names ['_2011_G5_96ALL-MiSeq', '_2014_J1_FRISKDIABETES', '_2014_G6_Hultin_MS', '_2014_G5_Hultin_MS', '_2011_N19_VIRASKINFAPMISEQ', '_2014_B_Prostate', '_2014_F1_PARAFFINBLANKBLOCKS', '_2014_E1_30CxC', '_2015_F_Lagheden_ACCES_HPVneg', '_2014_R1_Hultin_Caski', '_2014_O-Q1_Larynx', '_2013_H', '_2014_P_Lagheden_Matti-HPV-vacc-CIN', '_2014_G1_MS5CASES5CONTROLS', '_2015_F2_', '_2013_E2_SCC', '_2014_G7_MSNEW', '_2014_D3_Diabetes_Hyoty', '_2014_N1_Anethovirus']
+opened file again
+ - 75s - loss: 0.0663 - acc: 0.9812 - val_loss: 0.0730 - val_acc: 0.9813
+
+Epoch 00011: AUROC improved from 0.86364 to 0.86503, saving model to final_MetaMiner/end_to_end_model_vol2.hdf5
+ AUROC on Validation:  0.865
+Epoch 12/30
+lr_decay called, new lr  2.5e-05
+did all lines 2534400 2534868 12
+unique project names ['_2011_G5_96ALL-MiSeq', '_2014_J1_FRISKDIABETES', '_2014_G6_Hultin_MS', '_2014_G5_Hultin_MS', '_2011_N19_VIRASKINFAPMISEQ', '_2014_B_Prostate', '_2014_F1_PARAFFINBLANKBLOCKS', '_2014_E1_30CxC', '_2015_F_Lagheden_ACCES_HPVneg', '_2014_R1_Hultin_Caski', '_2014_O-Q1_Larynx', '_2013_H', '_2014_P_Lagheden_Matti-HPV-vacc-CIN', '_2014_G1_MS5CASES5CONTROLS', '_2015_F2_', '_2013_E2_SCC', '_2014_G7_MSNEW', '_2014_D3_Diabetes_Hyoty', '_2014_N1_Anethovirus']
+opened file again
+ - 75s - loss: 0.0646 - acc: 0.9816 - val_loss: 0.0726 - val_acc: 0.9815
+
+Epoch 00012: AUROC improved from 0.86503 to 0.86612, saving model to final_MetaMiner/end_to_end_model_vol2.hdf5
+ AUROC on Validation:  0.8661
+Epoch 13/30
+lr_decay called, new lr  2.5e-05
+did all lines 2745600 2746107 13
+unique project names ['_2011_G5_96ALL-MiSeq', '_2014_J1_FRISKDIABETES', '_2014_G6_Hultin_MS', '_2014_G5_Hultin_MS', '_2011_N19_VIRASKINFAPMISEQ', '_2014_B_Prostate', '_2014_F1_PARAFFINBLANKBLOCKS', '_2014_E1_30CxC', '_2015_F_Lagheden_ACCES_HPVneg', '_2014_R1_Hultin_Caski', '_2014_O-Q1_Larynx', '_2013_H', '_2014_P_Lagheden_Matti-HPV-vacc-CIN', '_2014_G1_MS5CASES5CONTROLS', '_2015_F2_', '_2013_E2_SCC', '_2014_G7_MSNEW', '_2014_D3_Diabetes_Hyoty', '_2014_N1_Anethovirus']
+opened file again
+ - 75s - loss: 0.0641 - acc: 0.9818 - val_loss: 0.0724 - val_acc: 0.9817
+
+Epoch 00013: AUROC improved from 0.86612 to 0.86735, saving model to final_MetaMiner/end_to_end_model_vol2.hdf5
+ AUROC on Validation:  0.8673
+Epoch 14/30
+lr_decay called, new lr  2.5e-05
+did all lines 2956800 2957346 14
+unique project names ['_2011_G5_96ALL-MiSeq', '_2014_J1_FRISKDIABETES', '_2014_G6_Hultin_MS', '_2014_G5_Hultin_MS', '_2011_N19_VIRASKINFAPMISEQ', '_2014_B_Prostate', '_2014_F1_PARAFFINBLANKBLOCKS', '_2014_E1_30CxC', '_2015_F_Lagheden_ACCES_HPVneg', '_2014_R1_Hultin_Caski', '_2014_O-Q1_Larynx', '_2013_H', '_2014_P_Lagheden_Matti-HPV-vacc-CIN', '_2014_G1_MS5CASES5CONTROLS', '_2015_F2_', '_2013_E2_SCC', '_2014_G7_MSNEW', '_2014_D3_Diabetes_Hyoty', '_2014_N1_Anethovirus']
+opened file again
+ - 75s - loss: 0.0626 - acc: 0.9818 - val_loss: 0.0723 - val_acc: 0.9817
+
+Epoch 00014: AUROC did not improve from 0.86735 (current: 0.86698)
+ AUROC on Validation:  0.867
+Epoch 15/30
+lr_decay called, new lr  1.25e-05
+did all lines 3168000 3168585 15
+unique project names ['_2011_G5_96ALL-MiSeq', '_2014_J1_FRISKDIABETES', '_2014_G6_Hultin_MS', '_2014_G5_Hultin_MS', '_2011_N19_VIRASKINFAPMISEQ', '_2014_B_Prostate', '_2014_F1_PARAFFINBLANKBLOCKS', '_2014_E1_30CxC', '_2015_F_Lagheden_ACCES_HPVneg', '_2014_R1_Hultin_Caski', '_2014_O-Q1_Larynx', '_2013_H', '_2014_P_Lagheden_Matti-HPV-vacc-CIN', '_2014_G1_MS5CASES5CONTROLS', '_2015_F2_', '_2013_E2_SCC', '_2014_G7_MSNEW', '_2014_D3_Diabetes_Hyoty', '_2014_N1_Anethovirus']
+opened file again
+ - 75s - loss: 0.0613 - acc: 0.9823 - val_loss: 0.0717 - val_acc: 0.9818
+
+Epoch 00015: AUROC improved from 0.86735 to 0.86779, saving model to final_MetaMiner/end_to_end_model_vol2.hdf5
+ AUROC on Validation:  0.8678
+Epoch 16/30
+lr_decay called, new lr  1.25e-05
+did all lines 3379200 3379824 16
+unique project names ['_2011_G5_96ALL-MiSeq', '_2014_J1_FRISKDIABETES', '_2014_G6_Hultin_MS', '_2014_G5_Hultin_MS', '_2011_N19_VIRASKINFAPMISEQ', '_2014_B_Prostate', '_2014_F1_PARAFFINBLANKBLOCKS', '_2014_E1_30CxC', '_2015_F_Lagheden_ACCES_HPVneg', '_2014_R1_Hultin_Caski', '_2014_O-Q1_Larynx', '_2013_H', '_2014_P_Lagheden_Matti-HPV-vacc-CIN', '_2014_G1_MS5CASES5CONTROLS', '_2015_F2_', '_2013_E2_SCC', '_2014_G7_MSNEW', '_2014_D3_Diabetes_Hyoty', '_2014_N1_Anethovirus']
+opened file again
+ - 75s - loss: 0.0610 - acc: 0.9824 - val_loss: 0.0716 - val_acc: 0.9819
+
+Epoch 00016: AUROC improved from 0.86779 to 0.86828, saving model to final_MetaMiner/end_to_end_model_vol2.hdf5
+ AUROC on Validation:  0.8683
+Epoch 17/30
+lr_decay called, new lr  1.25e-05
+did all lines 3590400 3591063 17
+unique project names ['_2011_G5_96ALL-MiSeq', '_2014_J1_FRISKDIABETES', '_2014_G6_Hultin_MS', '_2014_G5_Hultin_MS', '_2011_N19_VIRASKINFAPMISEQ', '_2014_B_Prostate', '_2014_F1_PARAFFINBLANKBLOCKS', '_2014_E1_30CxC', '_2015_F_Lagheden_ACCES_HPVneg', '_2014_R1_Hultin_Caski', '_2014_O-Q1_Larynx', '_2013_H', '_2014_P_Lagheden_Matti-HPV-vacc-CIN', '_2014_G1_MS5CASES5CONTROLS', '_2015_F2_', '_2013_E2_SCC', '_2014_G7_MSNEW', '_2014_D3_Diabetes_Hyoty', '_2014_N1_Anethovirus']
+opened file again
+ - 75s - loss: 0.0601 - acc: 0.9828 - val_loss: 0.0715 - val_acc: 0.9818
+
+Epoch 00017: AUROC improved from 0.86828 to 0.86873, saving model to final_MetaMiner/end_to_end_model_vol2.hdf5
+ AUROC on Validation:  0.8687
+Epoch 18/30
+lr_decay called, new lr  1.25e-05
+did all lines 3801600 3802302 18
+unique project names ['_2011_G5_96ALL-MiSeq', '_2014_J1_FRISKDIABETES', '_2014_G6_Hultin_MS', '_2014_G5_Hultin_MS', '_2011_N19_VIRASKINFAPMISEQ', '_2014_B_Prostate', '_2014_F1_PARAFFINBLANKBLOCKS', '_2014_E1_30CxC', '_2015_F_Lagheden_ACCES_HPVneg', '_2014_R1_Hultin_Caski', '_2014_O-Q1_Larynx', '_2013_H', '_2014_P_Lagheden_Matti-HPV-vacc-CIN', '_2014_G1_MS5CASES5CONTROLS', '_2015_F2_', '_2013_E2_SCC', '_2014_G7_MSNEW', '_2014_D3_Diabetes_Hyoty', '_2014_N1_Anethovirus']
+opened file again
+ - 75s - loss: 0.0599 - acc: 0.9829 - val_loss: 0.0713 - val_acc: 0.9820
+
+Epoch 00018: AUROC did not improve from 0.86873 (current: 0.86853)
+ AUROC on Validation:  0.8685
+Epoch 19/30
+lr_decay called, new lr  1.25e-05
+did all lines 4012800 4013541 19
+unique project names ['_2011_G5_96ALL-MiSeq', '_2014_J1_FRISKDIABETES', '_2014_G6_Hultin_MS', '_2014_G5_Hultin_MS', '_2011_N19_VIRASKINFAPMISEQ', '_2014_B_Prostate', '_2014_F1_PARAFFINBLANKBLOCKS', '_2014_E1_30CxC', '_2015_F_Lagheden_ACCES_HPVneg', '_2014_R1_Hultin_Caski', '_2014_O-Q1_Larynx', '_2013_H', '_2014_P_Lagheden_Matti-HPV-vacc-CIN', '_2014_G1_MS5CASES5CONTROLS', '_2015_F2_', '_2013_E2_SCC', '_2014_G7_MSNEW', '_2014_D3_Diabetes_Hyoty', '_2014_N1_Anethovirus']
+opened file again
+ - 75s - loss: 0.0590 - acc: 0.9829 - val_loss: 0.0711 - val_acc: 0.9819
+
+Epoch 00019: AUROC improved from 0.86873 to 0.86909, saving model to final_MetaMiner/end_to_end_model_vol2.hdf5
+ AUROC on Validation:  0.8691
+Epoch 20/30
+lr_decay called, new lr  6.25e-06
+did all lines 4224000 4224780 20
+unique project names ['_2011_G5_96ALL-MiSeq', '_2014_J1_FRISKDIABETES', '_2014_G6_Hultin_MS', '_2014_G5_Hultin_MS', '_2011_N19_VIRASKINFAPMISEQ', '_2014_B_Prostate', '_2014_F1_PARAFFINBLANKBLOCKS', '_2014_E1_30CxC', '_2015_F_Lagheden_ACCES_HPVneg', '_2014_R1_Hultin_Caski', '_2014_O-Q1_Larynx', '_2013_H', '_2014_P_Lagheden_Matti-HPV-vacc-CIN', '_2014_G1_MS5CASES5CONTROLS', '_2015_F2_', '_2013_E2_SCC', '_2014_G7_MSNEW', '_2014_D3_Diabetes_Hyoty', '_2014_N1_Anethovirus']
+opened file again
+ - 75s - loss: 0.0586 - acc: 0.9831 - val_loss: 0.0711 - val_acc: 0.9820
+
+Epoch 00020: AUROC improved from 0.86909 to 0.86978, saving model to final_MetaMiner/end_to_end_model_vol2.hdf5
+ AUROC on Validation:  0.8698
+Epoch 21/30
+lr_decay called, new lr  6.25e-06
+did all lines 4435200 4436019 21
+unique project names ['_2011_G5_96ALL-MiSeq', '_2014_J1_FRISKDIABETES', '_2014_G6_Hultin_MS', '_2014_G5_Hultin_MS', '_2011_N19_VIRASKINFAPMISEQ', '_2014_B_Prostate', '_2014_F1_PARAFFINBLANKBLOCKS', '_2014_E1_30CxC', '_2015_F_Lagheden_ACCES_HPVneg', '_2014_R1_Hultin_Caski', '_2014_O-Q1_Larynx', '_2013_H', '_2014_P_Lagheden_Matti-HPV-vacc-CIN', '_2014_G1_MS5CASES5CONTROLS', '_2015_F2_', '_2013_E2_SCC', '_2014_G7_MSNEW', '_2014_D3_Diabetes_Hyoty', '_2014_N1_Anethovirus']
+opened file again
+ - 75s - loss: 0.0583 - acc: 0.9832 - val_loss: 0.0711 - val_acc: 0.9821
+
+Epoch 00021: AUROC did not improve from 0.86978 (current: 0.86957)
+ AUROC on Validation:  0.8696
+Epoch 22/30
+lr_decay called, new lr  6.25e-06
+did all lines 4646400 4647258 22
+unique project names ['_2011_G5_96ALL-MiSeq', '_2014_J1_FRISKDIABETES', '_2014_G6_Hultin_MS', '_2014_G5_Hultin_MS', '_2011_N19_VIRASKINFAPMISEQ', '_2014_B_Prostate', '_2014_F1_PARAFFINBLANKBLOCKS', '_2014_E1_30CxC', '_2015_F_Lagheden_ACCES_HPVneg', '_2014_R1_Hultin_Caski', '_2014_O-Q1_Larynx', '_2013_H', '_2014_P_Lagheden_Matti-HPV-vacc-CIN', '_2014_G1_MS5CASES5CONTROLS', '_2015_F2_', '_2013_E2_SCC', '_2014_G7_MSNEW', '_2014_D3_Diabetes_Hyoty', '_2014_N1_Anethovirus']
+opened file again
+ - 75s - loss: 0.0577 - acc: 0.9835 - val_loss: 0.0711 - val_acc: 0.9822
+
+Epoch 00022: AUROC improved from 0.86978 to 0.86995, saving model to final_MetaMiner/end_to_end_model_vol2.hdf5
+ AUROC on Validation:  0.8699
+Epoch 23/30
+lr_decay called, new lr  6.25e-06
+did all lines 4857600 4858497 23
+unique project names ['_2011_G5_96ALL-MiSeq', '_2014_J1_FRISKDIABETES', '_2014_G6_Hultin_MS', '_2014_G5_Hultin_MS', '_2011_N19_VIRASKINFAPMISEQ', '_2014_B_Prostate', '_2014_F1_PARAFFINBLANKBLOCKS', '_2014_E1_30CxC', '_2015_F_Lagheden_ACCES_HPVneg', '_2014_R1_Hultin_Caski', '_2014_O-Q1_Larynx', '_2013_H', '_2014_P_Lagheden_Matti-HPV-vacc-CIN', '_2014_G1_MS5CASES5CONTROLS', '_2015_F2_', '_2013_E2_SCC', '_2014_G7_MSNEW', '_2014_D3_Diabetes_Hyoty', '_2014_N1_Anethovirus']
+opened file again
+ - 75s - loss: 0.0572 - acc: 0.9832 - val_loss: 0.0710 - val_acc: 0.9821
+
+Epoch 00023: AUROC improved from 0.86995 to 0.87005, saving model to final_MetaMiner/end_to_end_model_vol2.hdf5
+ AUROC on Validation:  0.8701
+Epoch 24/30
+lr_decay called, new lr  6.25e-06
+did all lines 5068800 5069736 24
+unique project names ['_2011_G5_96ALL-MiSeq', '_2014_J1_FRISKDIABETES', '_2014_G6_Hultin_MS', '_2014_G5_Hultin_MS', '_2011_N19_VIRASKINFAPMISEQ', '_2014_B_Prostate', '_2014_F1_PARAFFINBLANKBLOCKS', '_2014_E1_30CxC', '_2015_F_Lagheden_ACCES_HPVneg', '_2014_R1_Hultin_Caski', '_2014_O-Q1_Larynx', '_2013_H', '_2014_P_Lagheden_Matti-HPV-vacc-CIN', '_2014_G1_MS5CASES5CONTROLS', '_2015_F2_', '_2013_E2_SCC', '_2014_G7_MSNEW', '_2014_D3_Diabetes_Hyoty', '_2014_N1_Anethovirus']
+opened file again
+ - 75s - loss: 0.0569 - acc: 0.9835 - val_loss: 0.0709 - val_acc: 0.9822
+
+Epoch 00024: AUROC did not improve from 0.87005 (current: 0.86998)
+ AUROC on Validation:  0.87
+Epoch 25/30
+lr_decay called, new lr  3.125e-06
+did all lines 5280000 5280975 25
+unique project names ['_2011_G5_96ALL-MiSeq', '_2014_J1_FRISKDIABETES', '_2014_G6_Hultin_MS', '_2014_G5_Hultin_MS', '_2011_N19_VIRASKINFAPMISEQ', '_2014_B_Prostate', '_2014_F1_PARAFFINBLANKBLOCKS', '_2014_E1_30CxC', '_2015_F_Lagheden_ACCES_HPVneg', '_2014_R1_Hultin_Caski', '_2014_O-Q1_Larynx', '_2013_H', '_2014_P_Lagheden_Matti-HPV-vacc-CIN', '_2014_G1_MS5CASES5CONTROLS', '_2015_F2_', '_2013_E2_SCC', '_2014_G7_MSNEW', '_2014_D3_Diabetes_Hyoty', '_2014_N1_Anethovirus']
+opened file again
+ - 75s - loss: 0.0567 - acc: 0.9835 - val_loss: 0.0712 - val_acc: 0.9823
+
+Epoch 00025: AUROC improved from 0.87005 to 0.87026, saving model to final_MetaMiner/end_to_end_model_vol2.hdf5
+ AUROC on Validation:  0.8703
+Epoch 26/30
+lr_decay called, new lr  3.125e-06
+did all lines 5491200 5492214 26
+unique project names ['_2011_G5_96ALL-MiSeq', '_2014_J1_FRISKDIABETES', '_2014_G6_Hultin_MS', '_2014_G5_Hultin_MS', '_2011_N19_VIRASKINFAPMISEQ', '_2014_B_Prostate', '_2014_F1_PARAFFINBLANKBLOCKS', '_2014_E1_30CxC', '_2015_F_Lagheden_ACCES_HPVneg', '_2014_R1_Hultin_Caski', '_2014_O-Q1_Larynx', '_2013_H', '_2014_P_Lagheden_Matti-HPV-vacc-CIN', '_2014_G1_MS5CASES5CONTROLS', '_2015_F2_', '_2013_E2_SCC', '_2014_G7_MSNEW', '_2014_D3_Diabetes_Hyoty', '_2014_N1_Anethovirus']
+opened file again
+ - 75s - loss: 0.0567 - acc: 0.9835 - val_loss: 0.0710 - val_acc: 0.9823
+
+Epoch 00026: AUROC improved from 0.87026 to 0.87056, saving model to final_MetaMiner/end_to_end_model_vol2.hdf5
+ AUROC on Validation:  0.8706
+TEST eval (generator): generator uses b_size:  128
+opened file again
+did all lines 26368 26405 1
+unique project names ['_2011_G5_96ALL-MiSeq', '_2014_J1_FRISKDIABETES', '_2014_G6_Hultin_MS', '_2014_G5_Hultin_MS', '_2011_N19_VIRASKINFAPMISEQ', '_2014_B_Prostate', '_2014_F1_PARAFFINBLANKBLOCKS', '_2014_E1_30CxC', '_2015_F_Lagheden_ACCES_HPVneg', '_2014_R1_Hultin_Caski', '_2014_O-Q1_Larynx', '_2013_H', '_2014_P_Lagheden_Matti-HPV-vacc-CIN', '_2014_G1_MS5CASES5CONTROLS', '_2015_F2_', '_2013_E2_SCC', '_2014_G7_MSNEW', '_2014_D3_Diabetes_Hyoty', '_2014_N1_Anethovirus']
+opened file again
+[0.06687055266398972, 0.9819478155339806]
+##########################
+TESTING with generate_batches
+generator uses b_size:  128
+opened file again
+did all lines 26368 26405 1
+unique project names ['_2011_G5_96ALL-MiSeq', '_2014_J1_FRISKDIABETES', '_2014_G6_Hultin_MS', '_2014_G5_Hultin_MS', '_2011_N19_VIRASKINFAPMISEQ', '_2014_B_Prostate', '_2014_F1_PARAFFINBLANKBLOCKS', '_2014_E1_30CxC', '_2015_F_Lagheden_ACCES_HPVneg', '_2014_R1_Hultin_Caski', '_2014_O-Q1_Larynx', '_2013_H', '_2014_P_Lagheden_Matti-HPV-vacc-CIN', '_2014_G1_MS5CASES5CONTROLS', '_2015_F2_', '_2013_E2_SCC', '_2014_G7_MSNEW', '_2014_D3_Diabetes_Hyoty', '_2014_N1_Anethovirus']
+opened file again
+TEST ROC area under the curve 
+0.8967405900816493
+generator uses b_size:  128
+opened file again
+did all lines 26368 26405 1
+unique project names ['_2011_G5_96ALL-MiSeq', '_2014_J1_FRISKDIABETES', '_2014_G6_Hultin_MS', '_2014_G5_Hultin_MS', '_2011_N19_VIRASKINFAPMISEQ', '_2014_B_Prostate', '_2014_F1_PARAFFINBLANKBLOCKS', '_2014_E1_30CxC', '_2015_F_Lagheden_ACCES_HPVneg', '_2014_R1_Hultin_Caski', '_2014_O-Q1_Larynx', '_2013_H', '_2014_P_Lagheden_Matti-HPV-vacc-CIN', '_2014_G1_MS5CASES5CONTROLS', '_2015_F2_', '_2013_E2_SCC', '_2014_G7_MSNEW', '_2014_D3_Diabetes_Hyoty', '_2014_N1_Anethovirus']
+opened file again
+VAL ROC area under the curve 
+0.8705632830825718

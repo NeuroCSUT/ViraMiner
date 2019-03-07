@@ -1,0 +1,31 @@
+ starting to fit RF
+done fitting RF
+Random Forest TEST ROC area under the curve 
+0.9999999978342046
+Random Forest TEST ROC area under the curve 
+0.520757736780167
+Random Forest TEST ROC area under the curve 
+0.5111438979487916
+
+ ##########################
+ starting to fit RF on onehot
+done fitting OneHot RF
+OneHot Random Forest TRAIN ROC area under the curve 
+0.9999999978342045
+OneHot Random Forest VAL ROC area under the curve 
+0.5683459434355735
+OneHot Random Forest TEST ROC area under the curve 
+0.5982248566816004
+
+ 
+ starting to fit Logistic regression
+/home/deepmind/anaconda3/envs/py27/lib/python2.7/site-packages/sklearn/linear_model/logistic.py:433: FutureWarning: Default solver will be changed to 'lbfgs' in 0.22. Specify a solver to silence this warning.
+  FutureWarning)
+done fitting Log Reg
+LogRegr TRAIN ROC area under the curve 
+0.632905337416548
+LogRegr VAL ROC area under the curve 
+0.5060557589318482
+LogRegr TEST ROC area under the curve 
+0.5402545243238698
+
