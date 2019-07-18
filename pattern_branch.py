@@ -1,5 +1,5 @@
 import numpy as np
-from keras.models import Model
+from keras.models import Model, load_model
 from keras.layers import Input, Dense, Conv1D, concatenate, Dropout
 from keras.layers import GlobalMaxPooling1D
 from keras.callbacks import LearningRateScheduler
@@ -7,6 +7,7 @@ from keras.optimizers import Adam
 from sklearn.metrics import roc_auc_score
 
 from helper_with_N import *
+import argparse
 
 # You should also change hardcoded values in helper_with_N if you change this
 sequence_length = 300

@@ -30,7 +30,7 @@ python2 frequency_branch.py output_folder/output_model_name --input_path data/DN
 ## 3) Training ViraMiner
 1) Train a Pattern and a Frequency model as described in 3) just above. (or train many of them and select best ones)
 2) To merge the two models as branches of ViraMiner and retrain the output layer, do (for example):
-  python2 merge_and_retrain.py output_folder/output_model_name --input_path data/DNA_data/fullset **--pattern_model final_pattern/pattern_size1200_filter11_0.0001None_drop0.5.hdf5 --freq_model final_freq/freq_size1000_filter8_0.001None_drop0.1.hdf5 --finetuning True** --epochs 30 --filter_size 8 --layer_sizes 1000 --dropout 0.1 --learning_rate 0.001 --lr_decay None > output_folder/output_logfile.txt
+  python2 merge_and_retrain.py output_folder/output_model_name --input_path data/DNA_data/fullset **--pattern_model final_pattern/pattern_size1200_filter11_0.0001None_drop0.5.hdf5 --freq_model final_freq/freq_size1000_filter8_0.001None_drop0.1.hdf5 --finetuning True** --epochs 30 --dropout 0.1 --learning_rate 0.001 --lr_decay None > output_folder/output_logfile.txt
 3) notice that with "finetuning True", also the best not-finetuned model is still saved separately.
    
 

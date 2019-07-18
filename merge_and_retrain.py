@@ -189,7 +189,7 @@ pred_probas = model.predict_generator(generate_batches_from_file(args.input_path
 pred_probas = pred_probas[:len(test_labels),:]
 print "TEST ROC area under the curve \n", roc_auc_score(test_labels, pred_probas)
 
-pred_probas = model.predict_generator(generate_batches_from_file(args.input_path+"_validation.csv",args.batch_size), steps=val_steps_per_epoch+1,workers=1, use_multiprocessing=False)
+pred_probas = model.predict_generator(generate_batches_from_file(args.input_path+"_validation.csv",args.batch_size), steps=val_steps_per_ep+1,workers=1, use_multiprocessing=False)
 pred_probas = pred_probas[:len(val_labels),:]
 print "VAL ROC area under the curve \n", roc_auc_score(val_labels, pred_probas)
 
@@ -201,7 +201,7 @@ pred_probas = model.predict_generator(generate_batches_from_file(args.input_path
 pred_probas = pred_probas[:len(test_labels),:]
 print "TEST ROC area under the curve \n", roc_auc_score(test_labels, pred_probas)
 
-pred_probas = model.predict_generator(generate_batches_from_file(args.input_path+"_validation.csv",args.batch_size), steps=val_steps_per_epoch+1,workers=1, use_multiprocessing=False)
+pred_probas = model.predict_generator(generate_batches_from_file(args.input_path+"_validation.csv",args.batch_size), steps=val_steps_per_ep+1,workers=1, use_multiprocessing=False)
 pred_probas = pred_probas[:len(val_labels),:]
 print "VAL ROC area under the curve \n", roc_auc_score(val_labels, pred_probas)
 
